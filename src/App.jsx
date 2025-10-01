@@ -38,9 +38,9 @@ function App() {
   })
 
   const planDetails = {
-    starter: { name: 'Starter', price: 29 },
-    pro: { name: 'Pro', price: 79 },
-    enterprise: { name: 'Enterprise', price: 199 }
+    starter: { name: 'Basic Website', price: 1999 },
+    pro: { name: 'Mobile App', price: 2999 },
+    enterprise: { name: 'Custom Software', price: 4999 }
   }
 
   const handleInputChange = (e) => {
@@ -94,13 +94,18 @@ function App() {
             Now accepting crypto payments
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-            Scale Your Business with
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Smart SaaS</span>
+            Professional Development Services
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Available Now</span>
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-            CloudFlow Pro delivers enterprise-grade workflow automation, analytics, and team collaboration tools. 
-            Pay securely with cryptocurrency through our integrated Cryptomus payment system.
+            CloudFlow Pro offers professional mobile app development, web application development, 
+            and custom software solutions. Get your project built by experienced developers and 
+            pay securely with cryptocurrency through our integrated Cryptomus payment system.
           </p>
+          <div className="bg-green-100 border border-green-300 rounded-lg p-4 mb-6 max-w-2xl mx-auto">
+            <p className="text-green-800 font-semibold">📱 Mobile & App Development Services - Ready to Order</p>
+            <p className="text-green-700 text-sm">Professional development team accepting crypto payments</p>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
@@ -122,6 +127,70 @@ function App() {
             />
             <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
               Live Demo
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Development Services for Sale Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">📱 Development Services Available for Purchase</h2>
+          <p className="text-xl mb-8 opacity-90">
+            Professional mobile and web development services with crypto payment options
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <Card className="bg-white/10 border-white/20 text-white">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <Smartphone className="w-6 h-6 mr-2" />
+                  Mobile App Development
+                </CardTitle>
+                <CardDescription className="text-white/80">
+                  iOS and Android native apps, React Native, Flutter development
+                  <br />
+                  <span className="font-semibold text-yellow-300">Starting at $2,999</span>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="bg-white/10 border-white/20 text-white">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <Globe className="w-6 h-6 mr-2" />
+                  Web Application Development
+                </CardTitle>
+                <CardDescription className="text-white/80">
+                  React, Vue.js, Angular, Node.js, full-stack solutions
+                  <br />
+                  <span className="font-semibold text-yellow-300">Starting at $1,999</span>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="bg-white/10 border-white/20 text-white">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <BarChart3 className="w-6 h-6 mr-2" />
+                  Custom Software Solutions
+                </CardTitle>
+                <CardDescription className="text-white/80">
+                  Enterprise software, APIs, databases, cloud deployment
+                  <br />
+                  <span className="font-semibold text-yellow-300">Starting at $4,999</span>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+          <div className="mt-8 space-y-4">
+            <Button 
+              size="lg" 
+              className="bg-white text-blue-600 hover:bg-gray-100 mr-4"
+              onClick={() => handleGetStarted('pro')}
+            >
+              Order Development Services
+              <Bitcoin className="w-5 h-5 ml-2" />
+            </Button>
+            <div className="text-white/90 text-sm">
+              ✅ Pay with Bitcoin, Ethereum, USDT, and 12+ other cryptocurrencies
             </div>
           </div>
         </div>
@@ -251,41 +320,41 @@ function App() {
       <section id="pricing" className="py-20 px-4 bg-slate-50">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Simple, Transparent Pricing</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Development Service Packages</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Choose the perfect plan for your team. All plans include crypto payment processing with competitive rates.
+              Professional development services with transparent pricing. Pay securely with cryptocurrency through Cryptomus.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Starter Plan */}
+            {/* Basic Website Package */}
             <Card className={`border-2 ${selectedPlan === 'starter' ? 'border-blue-500' : 'border-slate-200'} hover:shadow-lg transition-all`}>
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Starter</CardTitle>
-                <div className="text-4xl font-bold text-slate-800 mt-4">$29<span className="text-lg text-slate-500">/month</span></div>
-                <CardDescription>Perfect for small teams getting started</CardDescription>
+                <CardTitle className="text-2xl">Basic Website</CardTitle>
+                <div className="text-4xl font-bold text-slate-800 mt-4">$1,999<span className="text-lg text-slate-500"> one-time</span></div>
+                <CardDescription>Professional website development</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Up to 5 team members</span>
+                    <span>Responsive design (mobile-friendly)</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>10GB storage</span>
+                    <span>Up to 10 pages</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Basic analytics</span>
+                    <span>Contact forms & SEO optimization</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Email support</span>
+                    <span>30 days support</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Crypto payments (2% fee)</span>
+                    <span>Pay with crypto (2% fee)</span>
                   </li>
                 </ul>
                 <Button 
@@ -296,46 +365,46 @@ function App() {
                     handleGetStarted('starter')
                   }}
                 >
-                  Get Started
+                  Order Website
                 </Button>
               </CardContent>
             </Card>
 
-            {/* Pro Plan */}
+            {/* Mobile App Package */}
             <Card className={`border-2 ${selectedPlan === 'pro' ? 'border-blue-500' : 'border-slate-200'} hover:shadow-lg transition-all relative`}>
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                 <Badge className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">Most Popular</Badge>
               </div>
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Pro</CardTitle>
-                <div className="text-4xl font-bold text-slate-800 mt-4">$79<span className="text-lg text-slate-500">/month</span></div>
-                <CardDescription>Ideal for growing businesses</CardDescription>
+                <CardTitle className="text-2xl">Mobile App</CardTitle>
+                <div className="text-4xl font-bold text-slate-800 mt-4">$2,999<span className="text-lg text-slate-500"> one-time</span></div>
+                <CardDescription>iOS & Android app development</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Up to 25 team members</span>
+                    <span>Native iOS & Android apps</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>100GB storage</span>
+                    <span>Custom UI/UX design</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Advanced analytics & reporting</span>
+                    <span>API integration & backend</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Priority support</span>
+                    <span>App store submission</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Workflow automation</span>
+                    <span>90 days support</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Crypto payments (1.5% fee)</span>
+                    <span>Pay with crypto (1.5% fee)</span>
                   </li>
                 </ul>
                 <Button 
@@ -345,43 +414,43 @@ function App() {
                     handleGetStarted('pro')
                   }}
                 >
-                  Get Started
+                  Order Mobile App
                 </Button>
               </CardContent>
             </Card>
 
-            {/* Enterprise Plan */}
+            {/* Custom Software Package */}
             <Card className={`border-2 ${selectedPlan === 'enterprise' ? 'border-blue-500' : 'border-slate-200'} hover:shadow-lg transition-all`}>
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Enterprise</CardTitle>
-                <div className="text-4xl font-bold text-slate-800 mt-4">$199<span className="text-lg text-slate-500">/month</span></div>
-                <CardDescription>For large organizations</CardDescription>
+                <CardTitle className="text-2xl">Custom Software</CardTitle>
+                <div className="text-4xl font-bold text-slate-800 mt-4">$4,999<span className="text-lg text-slate-500"> one-time</span></div>
+                <CardDescription>Enterprise software solutions</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Unlimited team members</span>
+                    <span>Custom enterprise software</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>1TB storage</span>
+                    <span>Database design & APIs</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Custom integrations</span>
+                    <span>Cloud deployment & scaling</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>24/7 dedicated support</span>
+                    <span>Security & compliance</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Advanced security features</span>
+                    <span>6 months support</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Crypto payments (0.8% fee)</span>
+                    <span>Pay with crypto (0.8% fee)</span>
                   </li>
                 </ul>
                 <Button 
@@ -392,7 +461,7 @@ function App() {
                     handleGetStarted('enterprise')
                   }}
                 >
-                  Contact Sales
+                  Order Custom Software
                 </Button>
               </CardContent>
             </Card>
@@ -405,11 +474,18 @@ function App() {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <div>
-              <h2 className="text-4xl font-bold text-slate-800 mb-6">Get in Touch</h2>
+              <h2 className="text-4xl font-bold text-slate-800 mb-6">Development Company Contact</h2>
               <p className="text-xl text-slate-600 mb-8">
-                Ready to transform your business with CloudFlow Pro? Our team is here to help you get started 
-                and answer any questions about our crypto payment integration.
+                CloudFlow Pro is a professional software development company specializing in mobile apps, 
+                web applications, and custom software solutions. Contact us for project quotes and consultations.
               </p>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <h3 className="font-semibold text-blue-800 mb-2">🏢 Software Development Company</h3>
+                <p className="text-blue-700 text-sm">CloudFlow Pro Development LLC</p>
+                <p className="text-blue-700 text-sm">Specializing in: Mobile Apps, Web Development, Custom Software</p>
+                <p className="text-blue-700 text-sm">Business License: DEV-2024-001</p>
+                <p className="text-blue-700 text-sm">Accepting Cryptocurrency Payments via Cryptomus</p>
+              </div>
               
               <div className="space-y-6">
                 <div className="flex items-center">
@@ -512,7 +588,7 @@ function App() {
                 <span className="text-xl font-bold">CloudFlow Pro</span>
               </div>
               <p className="text-slate-400 mb-4">
-                Empowering businesses with intelligent workflow automation and secure crypto payment processing.
+                Professional software development company offering mobile apps, web development, and custom software solutions with crypto payment options.
               </p>
               <div className="flex space-x-4">
                 <div className="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 cursor-pointer">
