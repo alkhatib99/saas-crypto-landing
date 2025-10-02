@@ -17,7 +17,7 @@ import {
   CreditCard,
   Wallet
 } from 'lucide-react'
-import cryptomusService from '../services/cryptomusService'
+import { createPayment, generateOrderId } from '../services/paymentService'
 
 const PaymentModal = ({ isOpen, onClose, planDetails }) => {
   const [paymentStep, setPaymentStep] = useState('method') // method, crypto, processing, success, error
@@ -72,27 +72,21 @@ const PaymentModal = ({ isOpen, onClose, planDetails }) => {
     setError(null)
 
     try {
-      const orderId = `order_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`
+      const orderId = generateOrderId()
       
-      const invoiceData = {
-        amount: planDetails.price,
+      const paymentData = {
+        amount: planDetails.price.toString(),
         currency: 'USD',
-        orderId,
-        description: `CloudFlow Pro - ${planDetails.name} Plan`,
-        customerEmail,
-        callbackUrl: `${window.location.origin}/api/webhook/cryptomus`,
-        successUrl: `${window.location.origin}/payment/success`,
-        failUrl: `${window.location.origin}/payment/failed`
+        order_id: orderId,
+        plan_name: planDetails.name,
+        customer_email: customerEmail
       }
 
-      const invoice = await cryptomusService.createInvoice(invoiceData)
+      const response = await createPayment(paymentData)
       
-      if (invoice.success) {
-        setPaymentData(invoice.data)
-        setPaymentStep('processing')
-        
-        // Start polling for payment status
-        startPaymentPolling(invoice.data.invoice_id)
+      if (response.success && response.payment_url) {
+        // Redirect to Cryptomus payment page
+        window.location.href = response.payment_url
       } else {
         throw new Error('Failed to create payment invoice')
       }

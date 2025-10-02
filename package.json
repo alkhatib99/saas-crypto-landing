@@ -1,7 +1,24 @@
 {
   "name": "saas-crypto-landing",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "CloudFlow Pro - Professional software development services with cryptocurrency payment integration",
+  "author": "CloudFlow Pro <hello@cloudflowpro.com>",
+  "license": "MIT",
+  "homepage": "https://cloudflowpro.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alkhatib99/saas-crypto-landing"
+  },
+  "bugs": {
+    "url": "https://github.com/alkhatib99/saas-crypto-landing/issues",
+    "email": "abedalqader.work@gmail.com"
+  },
+  "support": {
+    "email": "abedalqader.work@gmail.com",
+    "phone": "+962792506055",
+    "url": "https://cloudflowpro.com/support"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",

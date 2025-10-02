@@ -21,6 +21,7 @@ import {
   Lock
 } from 'lucide-react'
 import PaymentModal from './components/PaymentModal.jsx'
+import Comments from './components/Comments.jsx'
 import dashboardPreview from './assets/dashboard-preview.jpg'
 import cryptoPaymentFlow from './assets/crypto-payment-flow.png'
 import cryptoProcessing from './assets/crypto-processing.png'
@@ -78,6 +79,7 @@ function App() {
               <a href="#features" className="text-slate-600 hover:text-blue-600 transition-colors">Features</a>
               <a href="#pricing" className="text-slate-600 hover:text-blue-600 transition-colors">Pricing</a>
               <a href="#contact" className="text-slate-600 hover:text-blue-600 transition-colors">Contact</a>
+              <a href="#support" className="text-slate-600 hover:text-blue-600 transition-colors">Support</a>
               <Button variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50">
                 Sign In
               </Button>
@@ -493,8 +495,19 @@ function App() {
                     <Mail className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800">Email</h3>
+                    <h3 className="font-semibold text-slate-800">General Inquiries</h3>
+                    <p className="text-slate-600">hello@cloudflowpro.com</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                    <Mail className="w-6 h-6 text-red-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-800">Technical Support</h3>
                     <p className="text-slate-600">abedalqader.work@gmail.com</p>
+                    <p className="text-slate-600 text-sm">aboodjob@gmail.com</p>
                   </div>
                 </div>
                 
@@ -503,8 +516,9 @@ function App() {
                     <Phone className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800">Phone</h3>
-                    <p className="text-slate-600">+1 (555) 123-4567</p>
+                    <h3 className="font-semibold text-slate-800">Phone Support</h3>
+                    <p className="text-slate-600">+962792506055</p>
+                    <p className="text-slate-600 text-sm">Mon-Fri 9AM-6PM EST</p>
                   </div>
                 </div>
                 
@@ -576,8 +590,11 @@ function App() {
         </div>
       </section>
 
+      {/* Comments Section */}
+      <Comments />
+
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12 px-4">
+      <footer id="support" className="bg-slate-900 text-white py-12 px-4">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -621,12 +638,23 @@ function App() {
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Support</h3>
+              <h3 className="font-semibold mb-4">Technical Support</h3>
               <ul className="space-y-2 text-slate-400">
+                <li className="flex items-center">
+                  <Mail className="w-4 h-4 mr-2" />
+                  <a href="mailto:abedalqader.work@gmail.com" className="hover:text-white transition-colors">abedalqader.work@gmail.com</a>
+                </li>
+                <li className="flex items-center">
+                  <Mail className="w-4 h-4 mr-2" />
+                  <a href="mailto:aboodjob@gmail.com" className="hover:text-white transition-colors">aboodjob@gmail.com</a>
+                </li>
+                <li className="flex items-center">
+                  <Phone className="w-4 h-4 mr-2" />
+                  <a href="tel:+962792506055" className="hover:text-white transition-colors">+962792506055</a>
+                </li>
                 <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">API Docs</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Live Chat Support</a></li>
               </ul>
             </div>
           </div>
